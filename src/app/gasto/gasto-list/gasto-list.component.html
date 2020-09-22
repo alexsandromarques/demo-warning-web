@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Lista de Gastos</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th width="30%">Nome da Pessoa</th>
+                    <th width="20%">Valor</th>
+                    <th width="20%">Data e Hora</th>
+                    <th width="30%">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let gasto of gastos | paginate: { itemsPerPage: 5, currentPage: paginaAtual }">
+                    <td>{{ gasto.nome }}</td>
+                    <td>{{ gasto.valor | currency:'BRL' }}</td>
+                    <td>{{ gasto.dataHora | date: 'dd/MM/yyyy hh:MM'}} </td>
+                    <td>
+                        <button (click)="details(gasto.id)" class="btn btn-info">Detalhar</button>
+                        <button (click)="update(gasto.id)" class="btn btn-success" style="margin-left: 10px">Alterar</button>
+                        <button (click)="delete(gasto.id)" class="btn btn-danger" style="margin-left: 10px">Deletar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="text-right">
+            <pagination-controls (pageChange)="paginaAtual = $event" previousLabel="Anterior" nextLabel="Próximo">
+            </pagination-controls>
+        </div>
+    </div>
+</div>

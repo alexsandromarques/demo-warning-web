@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateWarningComponent } from './update-warning.component';
+import { GastoFormComponent } from './gasto-form.component';
 
-describe('UpdateWarningComponent', () => {
-  let component: UpdateWarningComponent;
-  let fixture: ComponentFixture<UpdateWarningComponent>;
+describe('GastoFormComponent', () => {
+  let component: GastoFormComponent;
+  let fixture: ComponentFixture<GastoFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateWarningComponent ]
+      declarations: [ GastoFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateWarningComponent);
+    fixture = TestBed.createComponent(GastoFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,21 @@
+<h2>Detalhes do Gasto</h2>
+
+<hr />
+<div *ngIf="gasto">
+  <div>
+    <label><b>Nome da Pessoa: </b></label> {{ gasto.nome }}
+  </div>
+  <div>
+    <label><b>Data e Hora: </b></label> {{ gasto.dataHora | date: 'dd/MM/yyyy hh:MM'}}
+  </div>
+  <div>
+      <label><b>Valor: </b></label> {{ gasto.valor | currency:'BRL'}}
+    </div>
+  <div>
+    <label><b>Descrição: </b></label> {{ gasto.descricao }}
+  </div>
+
+</div>
+
+<br>
+<button (click)="list()" class="btn btn-primary">Voltar</button><br>
